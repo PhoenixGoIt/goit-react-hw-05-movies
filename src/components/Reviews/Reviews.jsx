@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {MoviesReviews} from '../Api/Api'
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 
 export default function Reviews() {
     const [item, setItem] = useState([])
