@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import {MoviesDetails} from '../Api/Api'
 import css from '../../Style/Style.module.css'
 import { Link, Outlet, useParams, useLocation, useNavigate } from "react-router-dom";
@@ -18,7 +18,11 @@ export default function MovieDetails() {
      
      const handleClick = () => navigate(location?.state?.from ?? '/');
 
-    const {original_title, overview, vote_average,genres , poster_path, release_date} = movie
+    const {original_title, overview, vote_average, poster_path, release_date} = movie
+    // const movieGenres =
+    // movie !== null
+    //   ? movie.genres.map((genre) => genre.name).join(", ")
+    //   : "Unknown";
     return (
             <>
                 <button type="button"  onClick={handleClick}>Go Back</button>
@@ -33,8 +37,8 @@ export default function MovieDetails() {
                     <p>User Score: {(vote_average * 10).toFixed(0)}%</p>
                     <h2>Overview</h2>
                     <p>{overview}</p>
-                    <h2>Genres</h2>
-                    
+                    {/* <h2>Genres</h2>
+                    <p>{movieGenres}</p> */}
                     </div>
                     </div>
                 <div>
@@ -50,20 +54,3 @@ export default function MovieDetails() {
             </>
         )
 }
-{/* <div className={css.movieDetails_container}>
-<img
-className={css.movieDetails_img}
-src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
-alt=''
-/>
-<div className={css.movieDetails_container2}>
-<h1>{original_title} ({release_date})</h1>
-<p>User Score {vote_average}/ 10</p>
-<h2>Overview</h2>
-<p>{overview}</p>
-<h2>Genres</h2>
-</div>
-</div>
-<div>
- */}
- // <li><Link to='/cast' element={<Cast />}>Cast</Link></li>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {MoviesCredits} from '../Api/Api'
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function Cast() {
     const [item, setItem] = useState([])
