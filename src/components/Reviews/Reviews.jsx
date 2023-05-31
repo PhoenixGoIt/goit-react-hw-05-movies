@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {MoviesReviews} from '../Api/Api'
 import {  useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 export default function Reviews() {
     const [item, setItem] = useState([])
@@ -24,3 +25,7 @@ export default function Reviews() {
         </>
     )
 }
+Reviews.propTypes = {
+    movieId: PropTypes.string.isRequired,
+  };
+  

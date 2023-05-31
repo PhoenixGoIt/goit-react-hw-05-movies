@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import css from '../../../Style/Style.module.css';
+import PropTypes from 'prop-types';
+
 const TrendingMoviesItem = ({ item }) => {
   const { name, title, id, backdrop_path } = item;
   return (
@@ -18,3 +20,11 @@ const TrendingMoviesItem = ({ item }) => {
 };
 
 export default TrendingMoviesItem;
+TrendingMoviesItem.propTypes = {
+  item: PropTypes.shape({
+    name: PropTypes.string,
+    title: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    backdrop_path: PropTypes.string.isRequired,
+  }).isRequired,
+};

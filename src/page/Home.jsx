@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TrendingMovies from "components/TrendingMovies/TrendingMovies";
 import { getMovies } from "components/Api/Api";
 import css from "../Style/Style.module.css";
+import PropTypes from 'prop-types';
 
 class Home extends Component {
   state = {
@@ -31,3 +32,7 @@ class Home extends Component {
 }
 
 export default Home;
+TrendingMovies.propTypes = {
+  data: PropTypes.array.isRequired,
+};
+

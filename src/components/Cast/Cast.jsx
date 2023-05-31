@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {MoviesCredits} from '../Api/Api'
 import { useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 export default function Cast() {
     const [item, setItem] = useState([])
@@ -27,3 +28,7 @@ export default function Cast() {
         </>
     )
 }
+Cast.propTypes = {
+    movieId: PropTypes.string.isRequired,
+  };
+  

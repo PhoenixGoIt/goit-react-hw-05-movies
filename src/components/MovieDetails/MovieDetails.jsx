@@ -3,6 +3,7 @@ import {MoviesDetails} from '../Api/Api'
 import css from '../../Style/Style.module.css'
 import { Link, Outlet, useParams, useLocation, useNavigate } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import PropTypes from 'prop-types';
 
 const Reviews  = lazy(() => import("../Reviews/Reviews"));
 const Cast  = lazy(() => import("../Cast/Cast"));
@@ -54,3 +55,7 @@ export default function MovieDetails() {
             </>
         )
 }
+MovieDetails.propTypes = {
+    movieId: PropTypes.string.isRequired,
+  };
+  

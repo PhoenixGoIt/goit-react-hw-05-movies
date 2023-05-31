@@ -3,6 +3,7 @@ import { Query } from "../components/Api/Api";
 import { useState } from "react";
 import css from "../Style/Style.module.css";
 import TrendingMovies from "components/TrendingMovies/TrendingMovies";
+import PropTypes from 'prop-types';
 
 function Movies() {
   const [item, setItem] = useState([]);
@@ -28,3 +29,6 @@ function Movies() {
 }
 
 export default Movies;
+TrendingMovies.propTypes = {
+  data: PropTypes.array.isRequired,
+};
