@@ -21,7 +21,7 @@ export const App = () => {
       </div>
       <Suspense fallback={<div className={css.rendering_container}><h2>Rendering...</h2></div>}>
         <Routes>
-          <Route path="/" element={<Home />} index />
+          <Route index element={<Home />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/movies/:movieId" element={<MovieDetails />}>
             <Route path="reviews" element={<Reviews />} />
