@@ -192,3 +192,17 @@
 .movieDetails_img {
   margin-right: 20px;
 }
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: #2a363b;
+  font-size: 25px;
+}
+
+.link :focus,
+.link:hover {
+  color: #2196f3;
+}

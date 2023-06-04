@@ -19,11 +19,7 @@ export default function MovieDetails() {
      
      const handleClick = () => navigate(location?.state?.from ?? '/');
 
-    const {original_title, overview, vote_average, poster_path, release_date} = movie
-    // const movieGenres =
-    // movie !== null
-    //   ? movie.genres.map((genre) => genre.name).join(", ")
-    //   : "Unknown";
+    const {original_title, overview, vote_average, genres, poster_path, release_date} = movie
     return (
             <>
                 <button type="button"  onClick={handleClick}>Go Back</button>
@@ -38,8 +34,11 @@ export default function MovieDetails() {
                     <p>User Score: {(vote_average * 10).toFixed(0)}%</p>
                     <h2>Overview</h2>
                     <p>{overview}</p>
-                    {/* <h2>Genres</h2>
-                    <p>{movieGenres}</p> */}
+                    <h2>Genres:</h2> <p> {genres &&
+                    genres.map(
+                    (genre, i, arr) =>`${genre.name} ${arr.length - 1 === i ? '' : '/'}`
+                    )}
+                    </p>
                     </div>
                     </div>
                 <div>
